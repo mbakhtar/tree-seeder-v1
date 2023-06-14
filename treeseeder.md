@@ -18,7 +18,7 @@ Insert it into the Climate Action Kit board.
 Click three dots besides ``|Download|`` button and follow the steps to pair your micro:bit.
 ![pair gif](https://raw.githubusercontent.com/mbakhtar/iste-electric-vehicle-v1/master/pair%20microbit-280x203.gif)
 
-## Step 3 
+## Step 5
 Click ``||fwdMotors:Motors||`` drag and drop ``||fwdMotors:Setup Driving||`` block inside ``||basic:on start||`` loop.
 ```blocks
 fwdMotors.setupDriving(
@@ -26,271 +26,211 @@ fwdMotors.servo1,
 fwdMotors.servo1,
 )
 ```
-## Step 4 
-Change the ``||fwdMotors:right motor to servo2||``. 
-Keep the ``||fwdMotors: left motor to servo1||``.
+## Step 6 
+Change the ``||fwdMotors:left motor to servo2||``
+and ``||fwdMotors: right motor to servo3||``.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-```
-## Step 5
-Click ``||logic:Logic||`` drag and drop ``||logic:if true then||`` block inside ``||basic:forever||`` loop.
-```blocks
-fwdMotors.setupDriving(
-fwdMotors.servo1,
-fwdMotors.servo2,
-)
-basic.forever(function () {
-    if (true) {
-            }
-    })
-```
-## Step 6
-Click ``||logic:Logic||`` drag and drop ``||logic:if true then||`` block under the 1st ``||logic:if true then||`` block
-```blocks
-fwdMotors.setupDriving(
-fwdMotors.servo1,
-fwdMotors.servo2,
-)
-basic.forever(function () {
-    if (true) {
-            }
-    if (true) {
-            }
-})
 ```
 ## Step 7
-Click ``||logic:Logic||`` drag and drop ``||logic:if true then||`` block under the 2nd ``||logic:if true then||`` block
+Click ``||fwdMotors:Motors||`` drag and drop ``||fwdMotors:set servo 1 to 0 '||``
+block under ``||fwdMotors:Setup Driving||`` block.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (true) {
-            }
-    if (true) {
-            }
-    if (true) {
-            }
-})
-```
-## Step 7
-Click ``||fwdSensors:Sensors||`` drag and drop ``||fwdSensors: line1 state is •||`` to replace ``||logic:true||`` condition of 1st ``||logic:if true then||`` block.
-```blocks
-fwdMotors.setupDriving(
-fwdMotors.servo1,
-fwdMotors.servo2,
-)
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        }
-    if (true) {
-        }
-    if (true) {
-        }
-})
+fwdMotors.servo1.fwdSetAngle(0)
 ```
 ## Step 8
-Click ``||fwdSensors:Sensors||`` drag and drop ``||fwdSensors: line2 state is o||`` to replace ``||logic:true||`` condition of 2nd ``||logic:if true then||`` block.
+Click ``||input:Input||`` drag and drop ``||input:on button A pressed||`` block
+on workspace.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-        }
-    if (true) {
-        }
-})
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {    
+    })
+)
 ```
 ## Step 9
-Click ``||fwdSensors:Sensors||`` drag and drop ``||fwdSensors: line3 state is •||`` to replace ``||logic:true||`` condition of 3rd ``||logic:if true then||`` block.
+Click ``||loops:Loops||`` drag and drop ``||loops:repeat 4 times||`` block inside
+``||input:on button A pressed||`` block.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-        }
-    if (fwdSensors.line3.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        }
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {}
 })
 ```
 ## Step 10
-Click ``||fwdMotors: Motors||`` drag and drop ``||fwdMotors: Turn 0 in place||`` block inside 1st ``||logic: if||`` 
-``||fwdSensors:line1 state is •||`` ``||logic:then||`` condition.
+Click ``||fwdMotors:Motors||`` drag and drop ``||fwdMotors:drive forward at 50||``
+block inside ``||loops:repeat 4 times||`` loop block.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(0)
-        }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-            }
-    if (fwdSensors.line3.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        })
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    }
+})
 ```
 ## Step 11
-Change ``||fwdMotors:Turn 0||`` to ``||fwdMotors:5||``
+Click ``||basic:Basic||`` drag and drop ``||basic:pause (ms) 100||`` block
+under ``||fwdMotors:drive forward at 50||`` block.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(5)
-        }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-            }
-    if (fwdSensors.line3.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        })
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    basic.pause(100)
+    }
+})
 ```
 ## Step 12
-Click ``||fwdMotors:Motors||`` drag and drop ``||fwdMotors:Drive forward 50||`` block inside 2nd
-``||logic:if||`` ``||fwdSensors:line2 state is o||`` ``||logic:then||`` condition.
-Change the ``||fwdMotors:Drive forward 50||`` to ``||fwdMotors:20||``
+Change ``||basic:pause (ms) 100||`` to ``||basic: (ms) 2000||``.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(5)
-            }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-        fwdMotors.drive(fwdMotors.drivingDirection.forward, 20)
-        }
-    if (fwdSensors.line3.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        }
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    basic.pause(2000)
+    }
 })
 ```
 ## Step 13
-Click ``||fwdMotors:Motors||`` drag and drop ``||fwdMotors: Turn 0 in place||`` block inside 3rd ``||logic:if||``
-``||fwdSensors:line3 state is •||`` ``||logic:then||`` condition. 
-Change the ``||fwdMotors:Turn 0||`` to ``||fwdMotors:-5||``.
+Click ``||fwdMotors:Motors||`` drag and drop ``||fwdMotors:set servo1 0 '||`` 
+block under ``||basic:pause (ms) 2000||`` block.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(5)
-            }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-        fwdMotors.drive(fwdMotors.drivingDirection.forward, 20)
-        }
-    if (fwdSensors.line3.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(-5)
-        }
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    basic.pause(2000)
+    fwdMotors.servo1.fwdSetAngle(0)
+    }
 })
 ```
 ## Step 14
-Click ``||basic:Basic||`` drag and drop ``||basic:pause (ms) 100||`` block under ``||fwdMotors:Turn 5 in place||`` block.
+Change ``||fwdMotors:set servo1 to 0 '||`` to ``||fwdMotors:45||``
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(5)
-        basic.pause(100)
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    basic.pause(2000)
+    fwdMotors.servo1.fwdSetAngle(45)
     }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-        fwdMotors.drive(fwdMotors.drivingDirection.forward, 20)
-        }
-    if (fwdSensors.line3.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(-5)
-        }
 })
 ```
 ## Step 15
-Click ``||basic:basic||`` drag and drop ``||basic:pause (ms) 100||``
-block under ``||fwdMotors:Drive Forward at 50||`` block.
+Click ``||basic:Basic||`` drag and drop ``||basic:pause (ms) 100||`` under 
+``||fwdMotors:set servo1 to 45 '||`` block. Change ``||basic:(ms) 100||`` to
+``||basic:(ms) 500||``
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(5)
-        basic.pause(100)
-    }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-        fwdMotors.drive(fwdMotors.drivingDirection.forward, 20)
-        basic.pause(100)
-    }
-    if (fwdSensors.line3.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(-5)
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    basic.pause(2000)
+    fwdMotors.servo1.fwdSetAngle(45)
+    basic.pause(500)
     }
 })
 ```
 ## Step 16
-Click ``||basic:basic||`` drag and drop ``||basic:pause (ms) 100||``
-block under ``||fwdMotors:Turn -5 in place||`` block.
+Click ``||fwdMotors:Motors||`` drag and drop ``||fwdMotors:set servo1 to 0 '||``
+block under ``||basic:pause (ms) 500||`` block.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(5)
-        basic.pause(100)
-    }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-        fwdMotors.drive(fwdMotors.drivingDirection.forward, 20)
-        basic.pause(100)
-    }
-    if (fwdSensors.line3.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(-5)
-        basic.pause(100)
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    basic.pause(2000)
+    fwdMotors.servo1.fwdSetAngle(45)
+    basic.pause(500)
+    fwdMotors.servo1.fwdSetAngle(0)
     }
 })
 ```
 ## Step 17
-Click ``||fwdMotors:+||`` on ``||fwdMotors:Setup Driving||``
-block inside ``||basic:on start||`` block. Set bias to ``||fwdMotors: 0||``.
-Change ``||basic:pause (ms) 100||`` to ``||basic:500||`` for all 
-``||basic:pause||`` blocks.
+Click ``||fwdMotors:Motors||`` drag and drop ``||fwdMotors:stop motors||`` block
+under ``||loops:repeat 4 times||`` block.
 ```blocks
 fwdMotors.setupDriving(
-fwdMotors.servo1,
 fwdMotors.servo2,
-0
+fwdMotors.servo3,
 )
-basic.forever(function () {
-    if (fwdSensors.line1.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(5)
-        basic.pause(500)
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    basic.pause(2000)
+    fwdMotors.servo1.fwdSetAngle(45)
+    basic.pause(500)
+    fwdMotors.servo1.fwdSetAngle(0)
     }
-    if (fwdSensors.line2.fwdIsLineSensorState(fwdSensors.lineSensorState.miss)) {
-        fwdMotors.drive(fwdMotors.drivingDirection.forward, 20)
-        basic.pause(500)
-    }
-    if (fwdSensors.line3.fwdIsLineSensorState(fwdSensors.lineSensorState.hit)) {
-        fwdMotors.turn(-5)
-        basic.pause(500)
-    }
+    fwdMotors.stop()
 })
 ```
+
 ## Step 18
+Click ``||fwdMotors:+||`` on ``||fwdMotors:Setup Driving||``
+block inside ``||basic:on start||`` block. Set bias to ``||fwdMotors: 0||``.
+```blocks
+fwdMotors.setupDriving(
+fwdMotors.servo2,
+fwdMotors.servo3,
+0,
+)
+fwdMotors.servo1.fwdSetAngle(0)
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+        fwdMotors.drive(fwdMotors.drivingDirection.forward, 100)
+        basic.pause(2000)
+        fwdMotors.servo1.fwdSetAngle(45)
+        basic.pause(500)
+        fwdMotors.servo1.fwdSetAngle(0)
+    }
+    fwdMotors.stop()
+})
+```
+## Step 19
 ``|Download|`` and test your code. 
 Congratulations on completing your Electric Vehicle Prototype! - Go back to the lesson for more activities and extensions.
 Click [here](https://forwardedu.com/course/planting-for-the-future-building-a-tree-seeding-robot/) to go back to the lesson.
