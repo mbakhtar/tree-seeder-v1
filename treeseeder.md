@@ -293,3 +293,4 @@ basic.forever(function () {
 ## Step 18
 ``|Download|`` and test your code. 
 Congratulations on completing your Electric Vehicle Prototype! - Go back to the lesson for more activities and extensions.
+Click [here](https://forwardedu.com/course/planting-for-the-future-building-a-tree-seeding-robot/) to go back to the lesson.
