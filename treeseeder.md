@@ -47,7 +47,7 @@ fwdMotors.servo1.fwdSetAngle(0)
 ```
 ## Step 8
 Click ``||input:Input||`` drag and drop ``||input:on button A pressed||`` block
-on workspace.
+in workspace.
 ```blocks
 fwdMotors.setupDriving(
 fwdMotors.servo2,
@@ -233,4 +233,3 @@ input.onButtonPressed(Button.A, function () {
 ## Step 19
 ``|Download|`` and test your code. 
 Congratulations on completing your Electric Vehicle Prototype! - Go back to the lesson for more activities and extensions.
-Click [here](https://forwardedu.com/course/planting-for-the-future-building-a-tree-seeding-robot/) to go back to the lesson.
