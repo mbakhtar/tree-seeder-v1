@@ -232,4 +232,4 @@ input.onButtonPressed(Button.A, function () {
 ```
 ## Step 19
 ``|Download|`` and test your code. 
-Congratulations on completing your Electric Vehicle Prototype! - Go back to the lesson for more activities and extensions.
+Congratulations on completing your Automated Tree Seeder Prototype! - Go back to the lesson for more activities and extensions.
