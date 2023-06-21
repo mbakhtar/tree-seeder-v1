@@ -83,7 +83,7 @@ fwdMotors.servo3,
 fwdMotors.servo1.fwdSetAngle(0)
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
-    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 50)
     }
 })
 ```
@@ -98,7 +98,7 @@ fwdMotors.servo3,
 fwdMotors.servo1.fwdSetAngle(0)
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
-    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 50)
     basic.pause(100)
     }
 })
@@ -113,7 +113,7 @@ fwdMotors.servo3,
 fwdMotors.servo1.fwdSetAngle(0)
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
-    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 50)
     basic.pause(2000)
     }
 })
@@ -129,7 +129,7 @@ fwdMotors.servo3,
 fwdMotors.servo1.fwdSetAngle(0)
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
-    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 50)
     basic.pause(2000)
     fwdMotors.servo1.fwdSetAngle(0)
     }
@@ -145,7 +145,7 @@ fwdMotors.servo3,
 fwdMotors.servo1.fwdSetAngle(0)
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
-    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 50)
     basic.pause(2000)
     fwdMotors.servo1.fwdSetAngle(45)
     }
@@ -163,7 +163,7 @@ fwdMotors.servo3,
 fwdMotors.servo1.fwdSetAngle(0)
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
-    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 50)
     basic.pause(2000)
     fwdMotors.servo1.fwdSetAngle(45)
     basic.pause(500)
@@ -181,7 +181,7 @@ fwdMotors.servo3,
 fwdMotors.servo1.fwdSetAngle(0)
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
-    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 50)
     basic.pause(2000)
     fwdMotors.servo1.fwdSetAngle(45)
     basic.pause(500)
@@ -200,7 +200,7 @@ fwdMotors.servo3,
 fwdMotors.servo1.fwdSetAngle(0)
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
-    fwdMotors.drive(fwdMotors.drivingDirection.forward, 50)
+    fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 50)
     basic.pause(2000)
     fwdMotors.servo1.fwdSetAngle(45)
     basic.pause(500)
@@ -222,7 +222,7 @@ fwdMotors.servo3,
 fwdMotors.servo1.fwdSetAngle(0)
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
-        fwdMotors.drive(fwdMotors.drivingDirection.forward, 100)
+        fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 100)
         basic.pause(2000)
         fwdMotors.servo1.fwdSetAngle(45)
         basic.pause(500)
