@@ -1,6 +1,7 @@
 # Tree Seeder       
 ```package
 fwd-edu-breakout=github:climate-action-kits/pxt-fwd-edu/fwd-breakout
+=github:climate-action-kits/pxt-fwd-edu
 ```
 ## Step 1 @showdialog
 Welcome to Tree Seeder Coding Tutorial
