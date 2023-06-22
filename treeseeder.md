@@ -234,3 +234,4 @@ input.onButtonPressed(Button.A, function () {
 ## Step 19
 ``|Download|`` and test your code. 
 Congratulations on completing your Automated Tree Seeder Prototype! - Go back to the lesson for more activities and extensions.
+Want to check your code click [here](https://makecode.microbit.org/S55500-09021-94504-62161).
